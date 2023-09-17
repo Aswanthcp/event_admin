@@ -1,4 +1,4 @@
-export const baseUrl = "https://eventplanneronline.online/api/";
+export const baseUrl = "http://eventplanneronline.online/api/";
 
 // urls
 export const loginPost = "admin_login/";
