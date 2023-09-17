@@ -1,61 +1,3 @@
-// import "./list.scss";
-// import Sidebar from "../../components/sidebar/Sidebar";
-// import Navbar from "../../components/navbar/Navbar";
-// import Datatable from "../../components/datatable/Datatable";
-// import { useEffect, useState } from "react";
-// import axios from "../../utils/axios";
-// import { useNavigate } from "react-router-dom";
-// import {
-//   categoryColumns,
-//   eventColumns,
-//   itemColoumns,
-// } from "../../datatablesource";
-
-// const columnsMap = {
-
-//   categories: categoryColumns,
-//   events: eventColumns,
-//   items:itemColoumns
-// };
-
-// const List = ({ url, columnsType }) => {
-//   const navigate = useNavigate();
-//   const [data, setData] = useState([]);
-//   const [error, setError] = useState("");
-
-//   useEffect(() => {
-//     getList();
-//   }, [navigate]);
-
-//   const getList = async () => {
-//     axios
-//       .get(`${url}`)
-//       .then((response) => {
-//         setData(response?.data.results ?? []);
-//       })
-//       .catch((error) => {
-//         setError("An error occurred while fetching data.");
-//       });
-//   };
-
-//   const columns = columnsMap[columnsType] || [];
-
-//   return (
-//     <div className="list">
-//       <Sidebar />
-//       <div className="listContainer">
-//         <Navbar />
-//         {error ? (
-//           <div className="error">{error}</div>
-//         ) : (
-//           <Datatable data={data} columns={columns} />
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default List;
 import "./list.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -201,8 +143,8 @@ const VenderOrderList = () => {
                             <div className="cellWrapper">
                               <img
                                 src={
-                                  row.imageUrl
-                                    ? row.imageUrl
+                                  row?.imageUrl
+                                    ? row?.imageUrl
                                     : "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                                 }
                                 alt=""
@@ -213,7 +155,7 @@ const VenderOrderList = () => {
                           </TableCell>
 
                           <TableCell align="left">
-                            {row?.supplier.username}
+                            {row?.supplier?.username}
                           </TableCell>
                           <TableCell align="left">{row.price}</TableCell>
                           <TableCell align="left">{row.quantity}</TableCell>
