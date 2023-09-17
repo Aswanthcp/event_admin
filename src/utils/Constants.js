@@ -1,4 +1,4 @@
-export const baseUrl = "http://127.0.0.1:8000/api/";
+export const baseUrl = "https://eventplanneronline.online/api/";
 
 // urls
 export const loginPost = "admin_login/";
